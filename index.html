@@ -4,14 +4,11 @@
   <meta charset="UTF-8">
   <title>NovaGuesser</title>
   <style>
-    .logo {
-      font-size: 0.5em;
-    }
     body {
       background: #0f0f0f;
       color: #e0e0e0;
       font-family: monospace;
-      font-size: 2em;
+      font-size: 1.5em;
     }
     #output {
       white-space: pre-wrap;
@@ -58,7 +55,7 @@ let points = [];
 /* ===== OUTPUT HELPER ===== */
 const output = document.getElementById("output");
 function print(text = "") {
-  output.innerHTML += text + "\n";
+  output.textContent += text + "\n";
 }
 
 /* ===== INTRO ===== */
@@ -150,7 +147,6 @@ function endGame() {
 
 function printLogo() {
   print(`
-  <span class="logo">
         ▒▒▒▒▒▒▒▒          ░▒▒▒▒▒▒▒       
         ▒▒▒▒▒▒▒▒▒▒        ░▒▒▒▒▒▒▒       
         ▒▒▒▒▒▒▒▒▒▒▒░      ░▒▒▒▒▒▒▒          ██████████▓       
@@ -172,8 +168,7 @@ function printLogo() {
                                    █████▓      ▒▒▒   ▒▒▒▒▒▒ ░▒▒   ▒▒░  ▒▒   ▒░  ▒▒▒▒▒  ░▒▒▒▒░  ░▒   ▒▒  ▒▒▒▒▒▒        
                                   █████░       ░▒▒      ▒▒▒ ░▒▒   ▒▒░ ▒▒▒▒▒▒▒▒  ▒▒▒▒    ▒▒▒░  ░▒▒▒▒▒▒▒░ ▒▒▒           
                                  █████          ▒▒▒░   ▒▒▒  ░▒▒   ▒▒░ ▒▒           ▒▒▒    ░▒▒  ▒▒       ▒▒▒           
-                                █████             ▒▒▒▒▒▒░    ▒▒▒▒▒▒▒   ░▒▒▒▒▒  ░▒▒▒▒▒  ▒▒▒▒▒▒   ▒▒▒▒▒░  ▒▒░           
-  </span>
+                                █████             ▒▒▒▒▒▒░    ▒▒▒▒▒▒▒   ░▒▒▒▒▒  ░▒▒▒▒▒  ▒▒▒▒▒▒   ▒▒▒▒▒░  ▒▒░          
   `);
 }
 </script>
