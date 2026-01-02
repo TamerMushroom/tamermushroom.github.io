@@ -19,11 +19,6 @@
       font-size: 6em;  /* bigger text */
       padding: 0.25em 0.5em;
     }
-    button {
-      font-size: 5em;
-      padding: 0.35em 0.9em;
-      cursor: pointer;
-    }
 
     #day-image {
       display: block;      /* forces new line */
@@ -76,6 +71,14 @@ function printAfterImage(text = "") {
 }
 printAfterImage("Type the coordinates of where you think the image was taken.\nThe closer you are, the more points you get!");
 printAfterImage("Example format: A7\n");
+
+const inputEl = document.getElementById("input");
+
+inputEl.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    handleGuess();
+  }
+});
 
 /* ===== GUESS HANDLER ===== */
 function handleGuess() {
