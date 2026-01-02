@@ -17,11 +17,19 @@
       font-family: monospace;
       font-size: 1em;
     }
+    #day-image {
+      display: block;      /* forces new line */
+      margin-top: 1em;     /* space after text */
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
 
 <pre id="output"></pre>
+
+<img id="day-image" src="day1.png" alt="Day 1 image">
 
 <input id="input" placeholder="A7" />
 <button onclick="handleGuess()">Submit</button>
@@ -48,6 +56,7 @@ function print(text = "") {
 printLogo();
   
 print("Welcome to NovaGuesser!\n");
+print(`\nToday is Day ${DAY}`);
 print("Type the coordinates of where you think the image was taken.");
 print("Example format: A7\n");
 
@@ -68,7 +77,6 @@ function handleGuess() {
 
   const score = guess(coords);
   points.push(score);
-
   if (score === 100) {
     print(`Guess #${guesses}: 100 points — perfect!\n`);
     endGame();
