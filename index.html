@@ -31,6 +31,8 @@
 
 <img id="day-image" src="day1.png" alt="Day 1 image">
 
+<pre id="post-image-output"></pre>
+
 <input id="input" placeholder="A7" />
 <button onclick="handleGuess()">Submit</button>
 
@@ -57,8 +59,14 @@ printLogo();
   
 print("Welcome to NovaGuesser!\n");
 print(`\nToday is Day ${DAY}`);
-print("Type the coordinates of where you think the image was taken.");
-print("Example format: A7\n");
+
+const postOutput = document.getElementById("post-image-output");
+
+function printAfterImage(text = "") {
+  postOutput.textContent += text + "\n";
+}
+printAfterImage("Type the coordinates of where you think the image was taken.");
+printAfterImage("Example format: A7\n");
 
 /* ===== GUESS HANDLER ===== */
 function handleGuess() {
