@@ -38,9 +38,9 @@
 
 <script>
 /* ===== CONSTANTS ===== */
-const X = 8;
-const Y = 8;
-const ANSWER = "Mendel Hall Basement";
+const X = 1;
+const Y = 1;
+const ANSWER = "Saint Mary Bookstore";
 const DAY = 1;
 
 /* ===== GAME STATE ===== */
@@ -91,7 +91,7 @@ function handleGuess() {
     return;
   }
 
-  print(`Guess #${guesses}: ${score} points\n`);
+  print(`#${coords} Guess #${guesses}: ${score} points\n`);
 
   if (guesses >= 3) {
     endGame();
