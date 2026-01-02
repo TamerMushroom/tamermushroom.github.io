@@ -121,7 +121,7 @@ function guess(coords) {
     Math.pow(guessX - X, 2) + Math.pow(guessY - Y, 2)
   );
 
-  distance = 2 * Math.pow(distance, 1.75);
+  distance = 2 * Math.pow(distance, 1.9);
   distance = 100 - Math.round(distance);
 
   if (distance < 0) distance = 0;
