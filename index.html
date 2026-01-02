@@ -91,7 +91,7 @@ function handleGuess() {
     return;
   }
 
-  printAfterImage(`#${coords} Guess #${guesses}: ${score} points\n`);
+  printAfterImage(`${coords} Guess #${guesses}: ${score} points\n`);
 
   if (guesses >= 3) {
     endGame();
@@ -128,7 +128,8 @@ function endGame() {
     printAfterImage(`Guess ${i + 1}: ${p}`);
   });
 
-  printAfterImage("\nThanks for playing!");
+  printAfterImage("\nThanks for playing!\n");
+  printAfterImage("\nCredits: \nAscii Art Generator - https://www.asciiart.eu\n\nI programed this game myself in Java, then used AI to make it a website.");
 }
 
 function printLogo() {
