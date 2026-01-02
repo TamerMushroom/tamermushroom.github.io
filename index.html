@@ -77,7 +77,7 @@ function handleGuess() {
   input.value = "";
 
   if (!/^[A-Z][0-9]$/.test(coords)) {
-    print("Invalid format. Example: A7");
+    printAfterImage("Invalid format. Example: A7");
     return;
   }
 
@@ -86,12 +86,12 @@ function handleGuess() {
   const score = guess(coords);
   points.push(score);
   if (score === 100) {
-    print(`Guess #${guesses}: 100 points — perfect!\n`);
+    printAfterImage(`Guess #${guesses}: 100 points — perfect!\n`);
     endGame();
     return;
   }
 
-  print(`#${coords} Guess #${guesses}: ${score} points\n`);
+  printAfterImage(`#${coords} Guess #${guesses}: ${score} points\n`);
 
   if (guesses >= 3) {
     endGame();
@@ -120,15 +120,15 @@ function guess(coords) {
 function endGame() {
   gameOver = true;
 
-  print("\nThe picture was taken in " + ANSWER + ".\n");
-  print("Day " + DAY);
-  print("Guesses: " + guesses);
+  printAfterImage("\nThe picture was taken in " + ANSWER + ".\n");
+  printAfterImage("Day " + DAY);
+  printAfterImage("Guesses: " + guesses);
 
   points.forEach((p, i) => {
-    print(`Guess ${i + 1}: ${p}`);
+    printAfterImage(`Guess ${i + 1}: ${p}`);
   });
 
-  print("\nThanks for playing!");
+  printAfterImage("\nThanks for playing!");
 }
 
 function printLogo() {
