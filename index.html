@@ -100,7 +100,7 @@ function handleGuess() {
   guesses++;
 
   if (score === 100) {
-    printAfterImage(`\nA perfect guess!\n`);
+    printAfterImage(`\n${coords} | A perfect guess!\n`);
     endGame();
   } else {
     printAfterImage(
