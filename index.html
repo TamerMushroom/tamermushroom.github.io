@@ -95,20 +95,17 @@ function handleGuess() {
     return;
   }
 
-  guesses++;
-
   const score = guess(coords);
   points.push(score);
+  guesses++;
+
   if (score === 100) {
-    printAfterImage(`Guess #${guesses}: 100 points — perfect!\n`);
+    printAfterImage(`\nA perfect guess!\n`);
     endGame();
-    return;
-  }
-
-  printAfterImage(`${coords} Guess #${guesses}: ${score} points\n`);
-
-  if (guesses >= 3) {
-    endGame();
+  } else {
+    printAfterImage(
+      `Guess #${guesses} is worth ${score} points.\n`
+    );
   }
 }
 
@@ -145,6 +142,7 @@ function endGame() {
   printAfterImage("\nThanks for playing!");
   printAfterImage("Check back tomorrow for a new picture!\n");
   printAfterImage("\nCredits: \nAscii Art Generator - https://www.asciiart.eu\n\nI programed this game myself in Java, then used AI to make it a website.");
+  inputEl.disabled = gameOver;
 }
 
 function printLogo() {
